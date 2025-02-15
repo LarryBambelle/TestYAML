@@ -1,0 +1,84 @@
+version: 1.0.8
+ 
+cache: true
+ 
+interface:
+  # Privacy policy settings
+  privacyPolicy:
+    externalUrl: null
+    openNewTab: true
+ 
+  # Terms of service
+  termsOfService:
+    externalUrl: null
+    openNewTab: true
+ 
+registration:
+  socialLogins: ["openid"]  # Enable OpenID social login
+
+endpoints:
+  azureOpenAI:
+    titleModel: "gpt-4o-mini"  # Matches libre_app_az_oai_title_convo_model
+    plugins: true  # Since we have gptPlugins enabled
+    assistants: true  # Since we have azureAssistants enabled
+    groups:
+      - group: "default"
+        apiKey: "@Microsoft.KeyVault(SecretUri=${azurerm_key_vault_secret.openai_primary_key.id})"
+        instanceName: "${AZURE_OPENAI_API_INSTANCE_NAME}"
+        version: "2023-07-01-preview"
+        models:
+          gpt-4o:
+            deploymentName: gpt-4o
+            version: "2024-08-06"
+          gpt-4o-mini:
+            deploymentName: gpt-4o-mini
+            version: "2024-07-18"
+          text-embedding-ada-002:
+            deploymentName: text-embedding-ada-002
+            version: "1"
+
+  custom:
+    # OpenRouter.ai
+    - name: "OpenRouter"
+      apiKey: "@Microsoft.KeyVault(SecretUri=${azurerm_key_vault_secret.openrouter_key[0].id})"
+      baseURL: "https://openrouter.ai/api/v1"
+      models:
+        default: [
+          "openai/gpt-4-turbo",
+          "openai/gpt-4",
+          "anthropic/claude-3-opus",
+          "anthropic/claude-3-sonnet",
+          "anthropic/claude-3-haiku",
+          "meta-llama/llama-2-70b-chat",
+          "google/gemini-pro",
+          "mistral/mistral-large",
+          "mistral/mistral-medium"
+        ]
+        fetch: true
+      titleConvo: true
+      titleModel: "gpt-4-turbo"
+      summarize: false
+      summaryModel: "gpt-4-turbo"
+      forcePrompt: false
+      modelDisplayLabel: "OpenRouter"
+ 
+    # Perplexity
+    - name: "Perplexity"
+      apiKey: "@Microsoft.KeyVault(SecretUri=${azurerm_key_vault_secret.perplexity_key[0].id})"
+      baseURL: "https://api.perplexity.ai/"
+      models:
+        default: [
+          "mistral-7b-instruct",
+          "sonar-small-chat",
+          "sonar-small-online",
+          "sonar-medium-chat",
+          "sonar-medium-online"
+        ]
+        fetch: false
+      titleConvo: true
+      titleModel: "sonar-medium-chat"
+      summarize: false
+      summaryModel: "sonar-medium-chat"
+      forcePrompt: false
+      dropParams: ["stop", "frequency_penalty"]
+      modelDisplayLabel: "Perplexity"
