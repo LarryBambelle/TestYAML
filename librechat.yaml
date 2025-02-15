@@ -4,6 +4,13 @@ version: 1.4.1
 # Cache settings
 cache: true
 
+includedTools:
+      - "google"
+      - "youtube"
+      - "web-browser"
+      - "calculator"
+      - "BrowserOp"
+
 # Interface configuration
 interface:
   # Privacy policy settings
