@@ -117,15 +117,10 @@ endpoints:
   agents:
     disableBuilder: false
     capabilities:
-      - "execute_code"
-      - "actions"
-    includedTools:
-      - "traversaal_search"
-      - "google"
-      - "youtube"
-      - "web-browser"
-      - "calculator"
-      - "BrowserOp"
+        - "execute_code"
+        - "file_search"
+        - "actions"
+        - "tools"
   custom:
     # Mistral AI configuration
     - name: 'Mistral'
