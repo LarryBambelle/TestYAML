@@ -1,65 +1,88 @@
-# For more information, see the Configuration Guide:
-# https://www.librechat.ai/docs/configuration/librechat_yaml
-
 # Configuration version (required)
-version: 1.2.1
+version: 1.4.1
 
-# Cache settings: Set to true to enable caching
+# Cache settings
 cache: true
 
-# Custom interface configuration
+# Interface configuration
 interface:
   # Privacy policy settings
   privacyPolicy:
-    externalUrl: 'https://kezber.com/'
+    externalUrl: 'https://www.kezber.com/'
     openNewTab: true
 
   # Terms of service
   termsOfService:
-    externalUrl: 'https://kezber.com/'
+    externalUrl: 'https://www.kezber.com/'
     openNewTab: true
     modalAcceptance: true
-    modalTitle: "Terms of Service for LibreChat"
+    modalTitle: "Politique d'utilisation de Kraken"
     modalContent: |
-      # Terms and Conditions for LibreChat
+      # Politique d'utilisation de l'IA chez Kezber
 
-      *Effective Date: February 18, 2024*
+      ## Introduction
+      Kezber s'engage à utiliser l'intelligence artificielle (IA) de manière responsable, éthique et conforme aux lois canadiennes et québécoises. Cette politique établit des règles claires pour l'utilisation de l'IA dans les opérations, services et produits de l'entreprise. Elle s'applique à tous les membres de l'organisation : employés, gestionnaires, sous-traitants et partenaires.
 
-      Welcome to LibreChat, the informational website for the open-source AI chat platform, available at https://librechat.ai. These Terms of Service ("Terms") govern your use of our website and the services we offer. By accessing or using the Website, you agree to be bound by these Terms and our Privacy Policy, accessible at https://librechat.ai//privacy.
+      ## Définitions clés
+      - **Intelligence artificielle (IA)**: Technologies utilisant des algorithmes, l'apprentissage automatique et l'automatisation pour exécuter des tâches ou produire des prédictions
+      - **Système d'IA générative**: Outils capables de créer des contenus (textes, images, décisions) en fonction de données ou d'objectifs définis
+      - **Outils d'IA intégrés**: Fonctionnalités d'IA intégrées dans des logiciels approuvés par Kezber (ex.: Microsoft Teams avec CoPilot)
+      - **Données confidentielles**: Informations sensibles ou stratégiques dont la divulgation pourrait porter préjudice à Kezber, ses clients ou ses parties prenantes
+      - **Système d'IA ouvert**: Plateformes utilisant les données des utilisateurs pour entraîner leurs modèles
+      - **Renseignements personnels**: Données permettant d'identifier directement ou indirectement une personne
 
-      ## 1. Ownership
+      ## Principes directeurs pour les employés
+      1. Compléter l'expertise humaine: L'IA ne remplace pas le jugement ou la compétence des employés
+      2. Protéger les données: Ne jamais saisir de données confidentielles dans des systèmes d'IA ouverts
+      3. Faire l'objet d'un suivi de l'utilisation des outils d'IA
 
-      Upon purchasing a package from LibreChat, you are granted the right to download and use the code for accessing an admin panel for LibreChat. While you own the downloaded code, you are expressly prohibited from reselling, redistributing, or otherwise transferring the code to third parties without explicit permission from LibreChat.
+      ## Responsabilités des employés
+      1. Validation obligatoire des contenus générés par l'IA avant diffusion
+      2. Exigence d'expertise humaine pour la validation des contenus
+      3. Responsabilité des résultats même en cas d'erreur de l'outil
+      4. Conformité aux outils approuvés par Kezber
+      5. Sensibilité aux biais potentiels dans les contenus générés
 
-      ## 2. User Data
+      ## Processus d'approbation des nouveaux outils
+      1. Discussion avec le gestionnaire immédiat
+      2. Soumission d'une demande via ConnectWise
+      3. Validation préalable obligatoire avant intégration
 
-      We collect personal data, such as your name, email address, and payment information, as described in our Privacy Policy. This information is collected to provide and improve our services, process transactions, and communicate with you.
+      ## Directives éthiques
+      1. Consentement éclairé pour l'utilisation des données personnelles
+      2. Transparence sur l'utilisation de l'IA
+      3. Responsabilité personnelle sur les contenus générés
 
-      ## 3. Non-Personal Data Collection
+      ## Utilisations interdites
+      1. Saisie de données sensibles dans des systèmes ouverts
+      2. Création de contenu inapproprié ou non validé
+      3. Catégorisation discriminatoire
+      4. Utilisation à des fins personnelles
+      5. Détournement d'usage
 
-      The Website uses cookies to enhance user experience, analyze site usage, and facilitate certain functionalities. By using the Website, you consent to the use of cookies in accordance with our Privacy Policy.
+      ## Formation et conformité
+      - Formation initiale obligatoire
+      - Mises à jour régulières selon l'évolution des outils
+      - Suivi documenté des utilisations
+      - Signalement obligatoire des non-conformités
+      - Sanctions possibles en cas de violation
 
-      ## 4. Use of the Website
+      ## Engagement des sous-traitants
+      1. Respect de la politique ou équivalent
+      2. Validation préalable des outils
+      3. Protection des données des projets Kezber
 
-      You agree to use the Website only for lawful purposes and in a manner that does not infringe the rights of, restrict, or inhibit anyone else's use and enjoyment of the Website. Prohibited behavior includes harassing or causing distress or inconvenience to any person, transmitting obscene or offensive content, or disrupting the normal flow of dialogue within the Website.
+      ## Limitations techniques reconnues
+      - Biais potentiels dans les modèles
+      - Précision variable des résultats
+      - Nécessité de validation humaine
 
-      ## 5. Governing Law
+      La supervision de cette politique est assurée par le directeur de l'innovation, des données et de l'IA.
 
-      These Terms shall be governed by and construed in accordance with the laws of the United States, without giving effect to any principles of conflicts of law.
-
-      ## 6. Changes to the Terms
-
-      We reserve the right to modify these Terms at any time. We will notify users of any changes by email. Your continued use of the Website after such changes have been notified will constitute your consent to such changes.
-
-      ## 7. Contact Information
-
-      If you have any questions about these Terms, please contact us at contact@librechat.ai.
-
-      By using the Website, you acknowledge that you have read these Terms of Service and agree to be bound by them.
-
+  # Interface features
   endpointsMenu: true
   modelSelect: true
-  parameters: false
+  parameters: true
   sidePanel: true
   presets: true
   prompts: true
@@ -67,173 +90,102 @@ interface:
   multiConvo: true
   agents: true
 
-# Example Registration Object Structure (optional)
+# Registration configuration
 registration:
   socialLogins: ['openid']
   # allowedDomains:
   # - "gmail.com"
 
-# speech:
-#   tts:
-#     openai:
-#       url: ''
-#       apiKey: '${TTS_API_KEY}'
-#       model: ''
-#       voices: ['']
-
-#  
-#   stt:
-#     openai:
-#       url: ''
-#       apiKey: '${STT_API_KEY}'
-#       model: ''
-
-# rateLimits:
-#   fileUploads:
-#     ipMax: 100
-#     ipWindowInMinutes: 60  # Rate limit window for file uploads per IP
-#     userMax: 50
-#     userWindowInMinutes: 60  # Rate limit window for file uploads per user
-#   conversationsImport:
-#     ipMax: 100
-#     ipWindowInMinutes: 60  # Rate limit window for conversation imports per IP
-#     userMax: 50
-#     userWindowInMinutes: 60  # Rate limit window for conversation imports per user
-
-# Example Actions Object Structure
+# Actions configuration
 actions:
   allowedDomains:
     - "swapi.dev"
     - "librechat.ai"
     - "google.com"
 
-# Example MCP Servers Object Structure
-mcpServers:
-  everything:
-    # type: sse # type can optionally be omitted
-    url: http://localhost:3001/sse
-  puppeteer:
-    type: stdio
-    command: npx
-    args:
-      - -y
-      - "@modelcontextprotocol/server-puppeteer"
-  filesystem:
-    # type: stdio
-    command: npx
-    args:
-      - -y
-      - "@modelcontextprotocol/server-filesystem"
-      - /home/user/LibreChat/
-    iconPath: /home/user/LibreChat/client/public/assets/logo.svg
-  mcp-obsidian:
-    command: npx
-    args:
-      - -y
-      - "mcp-obsidian"
-      - /path/to/obsidian/vault
 
-# Definition of custom endpoints
+
+# Endpoints configuration
 endpoints:
-  # assistants:
-  #   disableBuilder: false # Disable Assistants Builder Interface by setting to `true`
-  #   pollIntervalMs: 3000  # Polling interval for checking assistant updates
-  #   timeoutMs: 180000  # Timeout for assistant operations
-  #   # Should only be one or the other, either `supportedIds` or `excludedIds`
-  #   supportedIds: ["asst_supportedAssistantId1", "asst_supportedAssistantId2"]
-  #   # excludedIds: ["asst_excludedAssistantId"]
-  #   Only show assistants that the user created or that were created externally (e.g. in Assistants playground).
-  #   # privateAssistants: false # Does not work with `supportedIds` or `excludedIds`
-  #   # (optional) Models that support retrieval, will default to latest known OpenAI models that support the feature
-  #   retrievalModels: ["gpt-4-turbo-preview"]
-  #   # (optional) Assistant Capabilities available to all users. Omit the ones you wish to exclude. Defaults to list below.
-  #   capabilities: ["code_interpreter", "retrieval", "actions", "tools", "image_vision"]
-  # agents:
-  #   (optional) Maximum recursion depth for agents, defaults to 25
-  #   recursionLimit: 50
-  #   (optional) Disable the builder interface for agents
-  #   disableBuilder: false
-  #   (optional) Agent Capabilities available to all users. Omit the ones you wish to exclude. Defaults to list below.
-  #   capabilities: ["execute_code", "file_search", "actions", "tools"]
+  agents:
+    disableBuilder: false
+    capabilities:
+      - "execute_code"
+      - "actions"
+    includedTools:
+      - "traversaal_search"
+      - "google"
+      - "youtube"
+      - "web-browser"
+      - "calculator"
+      - "BrowserOp"
   custom:
-    # Mistral AI Example
-    - name: 'Mistral' # Unique name for the endpoint
-      # For `apiKey` and `baseURL`, you can use environment variables that you define.
-      # recommended environment variables:
-      apiKey: 'user_provided'
+    # Mistral AI configuration
+    - name: 'Mistral'
+      apiKey: '${MISTRAL_API_KEY}'
       baseURL: 'https://api.mistral.ai/v1'
-
-      # Models configuration
       models:
-        # List of default models to use. At least one value is required.
         default: ['mistral-tiny', 'mistral-small', 'mistral-medium']
-        # Fetch option: Set to true to fetch models from API.
-        fetch: true # Defaults to false.
-
-      # Optional configurations
-
-      # Title Conversation setting
-      titleConvo: true # Set to true to enable title conversation
-
-      # Title Method: Choose between "completion" or "functions".
-      # titleMethod: "completion"  # Defaults to "completion" if omitted.
-
-      # Title Model: Specify the model to use for titles.
-      titleModel: 'mistral-tiny' # Defaults to "gpt-3.5-turbo" if omitted.
-
-      # Summarize setting: Set to true to enable summarization.
-      # summarize: false
-
-      # Summary Model: Specify the model to use if summarization is enabled.
-      # summaryModel: "mistral-tiny"  # Defaults to "gpt-3.5-turbo" if omitted.
-
-      # Force Prompt setting: If true, sends a `prompt` parameter instead of `messages`.
-      # forcePrompt: false
-
-      # The label displayed for the AI model in messages.
-      modelDisplayLabel: 'Mistral' # Default is "AI" when not set.
-
-      # Add additional parameters to the request. Default params will be overwritten.
-      # addParams:
-      # safe_prompt: true # This field is specific to Mistral AI: https://docs.mistral.ai/api/
-
-      # Drop Default params parameters from the request. See default params in guide linked below.
-      # NOTE: For Mistral, it is necessary to drop the following parameters or you will encounter a 422 Error:
+        fetch: true
+      titleConvo: true
+      titleModel: 'mistral-tiny'
+      modelDisplayLabel: 'Mistral'
       dropParams: ['stop', 'user', 'frequency_penalty', 'presence_penalty']
 
-    # OpenRouter Example
+    # OpenRouter configuration
     - name: 'OpenRouter'
-      # For `apiKey` and `baseURL`, you can use environment variables that you define.
-      # recommended environment variables:
-      # Known issue: you should not use `OPENROUTER_API_KEY` as it will then override the `openAI` endpoint to use OpenRouter as well.
-      apiKey: 'user_provided'
+      apiKey: '${OPENROUTER_KEY}'
       baseURL: 'https://openrouter.ai/api/v1'
       models:
         default: ['meta-llama/llama-3-70b-instruct']
         fetch: true
       titleConvo: true
       titleModel: 'meta-llama/llama-3-70b-instruct'
-      # Recommended: Drop the stop parameter from the request as Openrouter models use a variety of stop tokens.
       dropParams: ['stop']
       modelDisplayLabel: 'OpenRouter'
       
+# Speech configuration
+speech:
+  speechTab:
+    conversationMode: true
+    advancedMode: false
+    speechToText:
+      engineSTT: "external"
+      languageSTT: "French (FR)"  # Peut aussi être "French (CA)" pour le français canadien
+      autoTranscribeAudio: true
+      decibelValue: -45
+      autoSendText: 0
+    textToSpeech:
+      engineTTS: "external"
+      voice: "alloy"
+      languageTTS: "fr-FR,fr-CA"  # Support du français France et Canada
+      automaticPlayback: true
+      playbackRate: 1.0
+      cacheTTS: true
+  
+  # Azure Whisper STT Configuration
+  stt:
+    azureOpenAI:
+      instanceName: 'kezchatgptoai5045'
+      apiKey: '${AZURE_STT_API_KEY}'
+      deploymentName: 'whisper'
+      apiVersion: '2024-06-01'
+
+  # Azure TTS Configuration
+  tts:
+    azureOpenAI:
+      instanceName: 'atlantis-oai-azure'
+      apiKey: '${AZURE_TTS_API_KEY}'
+      deploymentName: 'tts-hd'
+      apiVersion: '2024-05-01-preview'
+      model: 'tts-1'
+      voices: ['alloy', 'echo', 'fable', 'onyx', 'nova', 'shimmer']
+
+# rateLimits:
+#   fileUploads: ...
+#   conversationsImport: ...
+
 # fileConfig:
-#   endpoints:
-#     assistants:
-#       fileLimit: 5
-#       fileSizeLimit: 10  # Maximum size for an individual file in MB
-#       totalSizeLimit: 50  # Maximum total size for all files in a single request in MB
-#       supportedMimeTypes:
-#         - "image/.*"
-#         - "application/pdf"
-#     openAI:
-#       disabled: true  # Disables file uploading to the OpenAI endpoint
-#     default:
-#       totalSizeLimit: 20
-#     YourCustomEndpointName:
-#       fileLimit: 2
-#       fileSizeLimit: 5
-#   serverFileSizeLimit: 100  # Global server file size limit in MB
-#   avatarSizeLimit: 2  # Limit for user avatar image size in MB
-# See the Custom Configuration Guide for more information on Assistants Config:
-# https://www.librechat.ai/docs/configuration/librechat_yaml/object_structure/assistants_endpoint
+#   endpoints: ...
+#   serverFileSizeLimit: ...
+#   avatarSizeLimit: ...
