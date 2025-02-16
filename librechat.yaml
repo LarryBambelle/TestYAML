@@ -115,7 +115,7 @@ actions:
 # Endpoints configuration
 endpoints:
   agents:
-    disableBuilder: true
+    disableBuilder: false
     capabilities:
         - "execute_code"
         - "file_search"
