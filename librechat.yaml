@@ -13,10 +13,6 @@ includedTools:
 
 # Interface configuration
 interface:
-  # Privacy policy settings
-  privacyPolicy:
-    externalUrl: 'https://www.kezber.com/'
-    openNewTab: true
 
   # Terms of service
   termsOfService:
