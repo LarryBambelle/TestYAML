@@ -85,7 +85,7 @@ interface:
   # Interface features
   endpointsMenu: true
   modelSelect: true
-  parameters: true
+  parameters: false
   sidePanel: true
   presets: true
   prompts: true
