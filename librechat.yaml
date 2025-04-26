@@ -152,7 +152,7 @@ speech:
   # Azure Whisper STT Configuration
   stt:
     azureOpenAI:
-      instanceName: 'kezchatgptoai5045'
+      instanceName: 'krakenoai-shared4882'
       apiKey: '${AZURE_STT_API_KEY}'
       deploymentName: 'whisper'
       apiVersion: '2024-06-01'
